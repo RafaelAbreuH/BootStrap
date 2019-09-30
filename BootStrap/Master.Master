@@ -1,0 +1,97 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="BootStrap.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/content/toastr.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="/Scripts/bootstrap.min.js"></script>
+    <script src="/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="/Scripts/toastr.min.js"></script>
+
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div><nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="/Default.aspx">aprendiendo bootstrap 4</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Archivo <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Registros
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="Ejemplo1.aspx">Ejemplo1.aspx</>                     
+                                    <a class="dropdown-item"href="contenedore03.aspx">Containers</a>
+                                      <a class="dropdown-item"href=" Columns.aspx">Columns</a>
+                                      <a class="dropdown-item"href="TextBlocks.aspx">TextBlocks</a>
+                                      <a class="dropdown-item"href="Colors.aspx">colors in Bootstrap</a>
+                                      <a class="dropdown-item"href="Badges.aspx">Badges</a>
+                                     <a class="dropdown-item"href="Buttons.aspx">Buttons</a>
+                                     <a class="dropdown-item"href="ButtonGroups.aspx">ButtonGroups</>
+                                     <a class="dropdown-item"href="Cards.aspx">Cards</a>
+                                     <a class="dropdown-item"href="Carousel.aspx">Carousel</a>
+                                     <a class="dropdown-item"href="Collapse.aspx"> Collapse</a>
+                                     <a class="dropdown-item" href="CustomForms.aspx">CustomForms</a>
+                                     <a class="dropdown-item"href="Dropdowns.aspx">Dropdowns</a>
+                                     <a class="dropdown-item"href="Filters.aspx">Filters</a>
+                                     <a class="dropdown-item"href="Flex.aspx">Flex</a>
+                                     <a class="dropdown-item"href="Forms.aspx">Forms</a>
+                                     <a class="dropdown-item"href="GridSystem.aspx">GridSystem</a>
+                                     <a class="dropdown-item"href="GridXsmall.aspx">GridXsmall</a>
+                                     <a class="dropdown-item"href="Groups.aspx">Groups</a>
+                                     <a class="dropdown-item"href="Icons.aspx">Icons</a>
+                                     <a class="dropdown-item"href="InputGroups.aspx">InputGroups</a>
+                                     <a class="dropdown-item"href="Inputs.aspx">Inputs</a>
+                                     <a class="dropdown-item"href="ListGroups.aspx">ListGroups</a>
+                                     <a class="dropdown-item"href="MediaObjects.aspx">MediaObjects</a>
+                                     <a class="dropdown-item"href="Modal.aspx">Modal</a>
+                                     <a class="dropdown-item"href="Navbar.aspx">Navbar</a>
+                                     <a class="dropdown-item"href="Navs.aspx">Navs</a>
+                                     <a class="dropdown-item"href="Popover.aspx">Popover</a>
+                                     <a class="dropdown-item"href="ProgressBars.aspx">ProgressBars</a>
+                                     <a class="dropdown-item"href="Scrollspy.aspx">Scrollspy</a>
+                                     <a class="dropdown-item"href="Spinners.aspx">Spinners</a>
+                                     <a class="dropdown-item"href="StackedHorizontal.aspx">StackedHorizontal</a>
+                                     <a class="dropdown-item"href="Toast.aspx">Toast</a>
+                                     <a class="dropdown-item"href="Tooltip.aspx">Tooltip</a>
+                                     <a class="dropdown-item"href="Utilities.aspx">Utilities</a>
+                                     <a class="dropdown-item"href="Jumbotron.aspx">Jumbotron</a>
+                                     <a class="dropdown-item"href="Paginacion.aspx">Paginacion</a>
+                                 
+                                   
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Consultas
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <%--<a class="dropdown-item" href="/Consultas/cEvaluacion.aspx">Evaluacion</a>--%>
+                            </div>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Ayuda <span class="sr-only">(current)</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

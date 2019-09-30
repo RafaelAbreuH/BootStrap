@@ -1,4 +1,5 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -23,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -67,17 +69,397 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Bootstrap\Alerts.aspx" />
+    <Content Include="Bootstrap\Badges.aspx" />
+    <Content Include="Bootstrap\ButtonGroups.aspx" />
+    <Content Include="Bootstrap\Buttons.aspx" />
+    <Content Include="Bootstrap\Cards.aspx" />
+    <Content Include="Bootstrap\Carousel.aspx" />
+    <Content Include="Bootstrap\Collapse.aspx" />
+    <Content Include="Bootstrap\Colors.aspx" />
+    <Content Include="Bootstrap\Columns.aspx" />
+    <Content Include="Bootstrap\Container.aspx" />
+    <Content Include="Bootstrap\CustomCheckBox.aspx" />
+    <Content Include="Bootstrap\DropDowns.aspx" />
+    <Content Include="Bootstrap\Ejemplo1.aspx" />
+    <Content Include="Bootstrap\Filters.aspx" />
+    <Content Include="Bootstrap\Flex.aspx" />
+    <Content Include="Bootstrap\Forms.aspx" />
+    <Content Include="Bootstrap\GridSystem.aspx" />
+    <Content Include="Bootstrap\GridxSmall.aspx" />
+    <Content Include="Bootstrap\Groups.aspx" />
+    <Content Include="Bootstrap\Icons.aspx" />
+    <Content Include="Bootstrap\Images.aspx" />
+    <Content Include="Bootstrap\InputGroups.aspx" />
+    <Content Include="Bootstrap\Inputs.aspx" />
+    <Content Include="Bootstrap\Jumbotron.aspx" />
+    <Content Include="Bootstrap\ListGroups.aspx" />
+    <Content Include="Bootstrap\MediaObjects.aspx" />
+    <Content Include="Bootstrap\Modal.aspx" />
+    <Content Include="Bootstrap\NavBar.aspx" />
+    <Content Include="Bootstrap\Navs.aspx" />
+    <Content Include="Bootstrap\Pagination.aspx" />
+    <Content Include="Bootstrap\Popover.aspx" />
+    <Content Include="Bootstrap\ProgressBar.aspx" />
+    <Content Include="Bootstrap\ScrollSpy.aspx" />
+    <Content Include="Bootstrap\Spinners.aspx" />
+    <Content Include="Bootstrap\StackedHorizontal.aspx" />
+    <Content Include="Bootstrap\Tables.aspx" />
+    <Content Include="Bootstrap\TextBlocks.aspx" />
+    <Content Include="Bootstrap\Toast.aspx" />
+    <Content Include="Bootstrap\ToolTip.aspx" />
+    <Content Include="Bootstrap\Utilities.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="Scripts\jquery-3.0.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-3.0.0.js" />
+    <Content Include="Scripts\jquery-3.0.0.min.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.js" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Web.config" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bootstrap\Alerts.aspx.cs">
+      <DependentUpon>Alerts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Alerts.aspx.designer.cs">
+      <DependentUpon>Alerts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Badges.aspx.cs">
+      <DependentUpon>Badges.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Badges.aspx.designer.cs">
+      <DependentUpon>Badges.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\ButtonGroups.aspx.cs">
+      <DependentUpon>ButtonGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\ButtonGroups.aspx.designer.cs">
+      <DependentUpon>ButtonGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Buttons.aspx.cs">
+      <DependentUpon>Buttons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Buttons.aspx.designer.cs">
+      <DependentUpon>Buttons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Cards.aspx.cs">
+      <DependentUpon>Cards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Cards.aspx.designer.cs">
+      <DependentUpon>Cards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Carousel.aspx.cs">
+      <DependentUpon>Carousel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Carousel.aspx.designer.cs">
+      <DependentUpon>Carousel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Collapse.aspx.cs">
+      <DependentUpon>Collapse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Collapse.aspx.designer.cs">
+      <DependentUpon>Collapse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Colors.aspx.cs">
+      <DependentUpon>Colors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Colors.aspx.designer.cs">
+      <DependentUpon>Colors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Columns.aspx.cs">
+      <DependentUpon>Columns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Columns.aspx.designer.cs">
+      <DependentUpon>Columns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Container.aspx.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Container.aspx.designer.cs">
+      <DependentUpon>Container.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\CustomCheckBox.aspx.cs">
+      <DependentUpon>CustomCheckBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\CustomCheckBox.aspx.designer.cs">
+      <DependentUpon>CustomCheckBox.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\DropDowns.aspx.cs">
+      <DependentUpon>DropDowns.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\DropDowns.aspx.designer.cs">
+      <DependentUpon>DropDowns.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Ejemplo1.aspx.cs">
+      <DependentUpon>Ejemplo1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Ejemplo1.aspx.designer.cs">
+      <DependentUpon>Ejemplo1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Filters.aspx.cs">
+      <DependentUpon>Filters.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Filters.aspx.designer.cs">
+      <DependentUpon>Filters.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Flex.aspx.cs">
+      <DependentUpon>Flex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Flex.aspx.designer.cs">
+      <DependentUpon>Flex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Forms.aspx.cs">
+      <DependentUpon>Forms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Forms.aspx.designer.cs">
+      <DependentUpon>Forms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\GridSystem.aspx.cs">
+      <DependentUpon>GridSystem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\GridSystem.aspx.designer.cs">
+      <DependentUpon>GridSystem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\GridxSmall.aspx.cs">
+      <DependentUpon>GridxSmall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\GridxSmall.aspx.designer.cs">
+      <DependentUpon>GridxSmall.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Groups.aspx.cs">
+      <DependentUpon>Groups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Groups.aspx.designer.cs">
+      <DependentUpon>Groups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Icons.aspx.cs">
+      <DependentUpon>Icons.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Icons.aspx.designer.cs">
+      <DependentUpon>Icons.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Images.aspx.cs">
+      <DependentUpon>Images.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Images.aspx.designer.cs">
+      <DependentUpon>Images.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\InputGroups.aspx.cs">
+      <DependentUpon>InputGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\InputGroups.aspx.designer.cs">
+      <DependentUpon>InputGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Inputs.aspx.cs">
+      <DependentUpon>Inputs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Inputs.aspx.designer.cs">
+      <DependentUpon>Inputs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Jumbotron.aspx.cs">
+      <DependentUpon>Jumbotron.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Jumbotron.aspx.designer.cs">
+      <DependentUpon>Jumbotron.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\ListGroups.aspx.cs">
+      <DependentUpon>ListGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\ListGroups.aspx.designer.cs">
+      <DependentUpon>ListGroups.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\MediaObjects.aspx.cs">
+      <DependentUpon>MediaObjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\MediaObjects.aspx.designer.cs">
+      <DependentUpon>MediaObjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Modal.aspx.cs">
+      <DependentUpon>Modal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Modal.aspx.designer.cs">
+      <DependentUpon>Modal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\NavBar.aspx.cs">
+      <DependentUpon>NavBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\NavBar.aspx.designer.cs">
+      <DependentUpon>NavBar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Navs.aspx.cs">
+      <DependentUpon>Navs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Navs.aspx.designer.cs">
+      <DependentUpon>Navs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Pagination.aspx.cs">
+      <DependentUpon>Pagination.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Pagination.aspx.designer.cs">
+      <DependentUpon>Pagination.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Popover.aspx.cs">
+      <DependentUpon>Popover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Popover.aspx.designer.cs">
+      <DependentUpon>Popover.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\ProgressBar.aspx.cs">
+      <DependentUpon>ProgressBar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\ProgressBar.aspx.designer.cs">
+      <DependentUpon>ProgressBar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\ScrollSpy.aspx.cs">
+      <DependentUpon>ScrollSpy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\ScrollSpy.aspx.designer.cs">
+      <DependentUpon>ScrollSpy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Spinners.aspx.cs">
+      <DependentUpon>Spinners.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Spinners.aspx.designer.cs">
+      <DependentUpon>Spinners.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\StackedHorizontal.aspx.cs">
+      <DependentUpon>StackedHorizontal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\StackedHorizontal.aspx.designer.cs">
+      <DependentUpon>StackedHorizontal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Tables.aspx.cs">
+      <DependentUpon>Tables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Tables.aspx.designer.cs">
+      <DependentUpon>Tables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\TextBlocks.aspx.cs">
+      <DependentUpon>TextBlocks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\TextBlocks.aspx.designer.cs">
+      <DependentUpon>TextBlocks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Toast.aspx.cs">
+      <DependentUpon>Toast.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Toast.aspx.designer.cs">
+      <DependentUpon>Toast.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\ToolTip.aspx.cs">
+      <DependentUpon>ToolTip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\ToolTip.aspx.designer.cs">
+      <DependentUpon>ToolTip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bootstrap\Utilities.aspx.cs">
+      <DependentUpon>Utilities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Bootstrap\Utilities.aspx.designer.cs">
+      <DependentUpon>Utilities.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Master.Master.cs">
+      <DependentUpon>Master.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Master.Master.designer.cs">
+      <DependentUpon>Master.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Master.Master" />
     <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.0.0.slim.min.map" />
+    <Content Include="Scripts\jquery-3.0.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -89,11 +471,18 @@
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <ProjectExtensions>
